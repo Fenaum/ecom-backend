@@ -51,6 +51,13 @@ const productTagData = [
   },
 ];
 
-const seedProductTags = () => ProductTag.bulkCreate(productTagData);
+const seedProductTags = async () => {
+  try { 
+    await ProductTag.bulkCreate(productTagData);
+    console.log('success'); 
+  } catch (err) {
+  console.error('failed', err); 
+  }
+}
 
 module.exports = seedProductTags;
